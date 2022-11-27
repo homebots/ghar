@@ -1,4 +1,4 @@
-import { request } from 'http';
+import { request } from 'https';
 import { readFileSync, writeFileSync } from 'fs';
 import { spawnSync as sh } from 'child_process';
 
@@ -6,7 +6,7 @@ const key = readFileSync('./key').toString('utf8').trim();
 const shell = sh('which', ['sh']).stdout.toString('utf8').trim();
 const empty = Buffer.concat([]);
 const headers = { connection: 'close' };
-const server = 'http://localhost:8000';
+const server = 'https://ghar.homebots.io';
 
 let running = false;
 
